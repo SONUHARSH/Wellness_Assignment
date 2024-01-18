@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION-2</title>
+    <style>
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <button onclick="showContent('HTML')">HTML</button>
+            <button onclick="showContent('CSS')">CSS</button>
+            <button onclick="showContent('JavaScript')">JavaScript</button>
+        </div>
+        <div class="tab-contents" id="HTML">
+            <p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.</p>
+        </div>
+        <div class="tab-contents" id="CSS">
+            <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.</p>
+        </div>
+        <div class="tab-contents" id="JavaScript">
+            <p>JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tabId) {
+            
+            var tabContents = document.getElementsByClassName('tab-contents');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>
